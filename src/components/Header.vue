@@ -15,12 +15,12 @@
                 </b-nav-item-dropdown>
 
                 <b-nav-item-dropdown text="Tipos" right>
-                    <b-dropdown-item v-for="t in types" v-bind:key="t.id" :to=" '/type/' + t.id + '/element'">
+                    <b-dropdown-item v-for="t in types" v-bind:key="t.id" :to=" '/type/' + t.id + '/elements'">
                     {{ t.title }}</b-dropdown-item>
                 </b-nav-item-dropdown>
 
                 <b-nav-item-dropdown text="Categorias" right>
-                    <b-dropdown-item v-for="c in categories" v-bind:key="c.id" :to=" '/category/' + c.id + '/element'">
+                    <b-dropdown-item v-for="c in categories" v-bind:key="c.id" :to=" '/category/' + c.id + '/elements'">
                     {{ c.title }}</b-dropdown-item>
                 </b-nav-item-dropdown>
 

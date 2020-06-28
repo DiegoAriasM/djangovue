@@ -3,7 +3,7 @@
     <b-list-group>
         <div  v-for="c in categories" v-bind:key="c.id">
              <b-list-group-item button>
-            <router-link :to=" '/category/' + c.id + '/element'">
+            <router-link :to=" '/category/' + c.id + '/elements'">
                 {{ c.title }}
                 </router-link>
                 </b-list-group-item>

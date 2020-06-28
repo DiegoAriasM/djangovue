@@ -10,6 +10,7 @@ import VueRouter from 'vue-router'
 
 import List  from './components/List'
 import Detail  from './components/Detail'
+import ListCategory  from './components/ListCategory'
 
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
@@ -19,7 +20,8 @@ Vue.config.productionTip = false
 
 const routes =[
   {path:'/', component:List},
-  {path:'/detail/:id', component:Detail}
+  {path:'/detail/:id', component:Detail},
+  {path:'/category/:id/elements', component:ListCategory}
 
 ]
 
