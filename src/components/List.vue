@@ -1,28 +1,41 @@
 <template>
-  <div>
-        <div class="box" v-for="e in elements" v-bind:key="e">
-            {{ e }}
+  <div class="container">
+
+        <router-link to="/detail">Detail</router-link>
+
+        <div  v-for="e in elements" v-bind:key="e.id">
+            <router-link :to=" '/detail/' + e.id">
+                <b-card
+                    :title="e.title"
+                >
+
+                <b-card-text>
+                    {{ e.description }}
+                </b-card-text>
+
+                </b-card>
+            </router-link>
         </div>
-
-        <button v-on:click="findAll">Click</button>
-
-        {{ msj }}
 
   </div>
 </template>
 
 <script>
 export default {
+
+    created(){
+        this.findAll()
+    },
     data(){
         return {
-            msj: ".... :(",
-            elements: ["Uno", "Dos", "Tres"]
+            elements: []
         };
     },
     methods: {
         findAll: function(){
-            console.log("Hola Mundo")
-            this.msj = "Click :)"
+            fetch('http://localhost:8000/api/element/?format=json')
+            .then(res => res.json())
+            .then(res => this.elements = res)
         }
     },
 }
